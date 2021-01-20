@@ -39,7 +39,7 @@ const useStyles = createUseStyles({
       transform: 'scale(1.1, 1.1)',
       backgroundColor: 'white',
       color: '#041D25',
-      borderColor: '#041D25',
+      borderColor: 'rgba(0,0,0,0)',
     },
   },
   name: {

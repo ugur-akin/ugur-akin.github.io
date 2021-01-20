@@ -1,6 +1,7 @@
 import React from 'react';
 // import avatar from './avatar.jpg';
 import {createUseStyles} from 'react-jss';
+import ContactLinks from '../components/ContactLinks';
 import CustomLink from '../components/CustomLink';
 import FancyNav from '../components/FancyNav';
 
@@ -15,10 +16,7 @@ const useStyles = createUseStyles({
     fontSize: 'calc(10px + 2vmin)',
     color: 'white',
   },
-  home: {
-    color: '#FFE7AD',
-  },
-  nav: {
+  header: {
     position: 'absolute',
     top: 0,
     left: 0,
@@ -28,7 +26,7 @@ const useStyles = createUseStyles({
     alignItems: 'stretch',
     justifyContent: 'space-between',
     color: 'white',
-    backgroundColor: '#EF436B',
+    backgroundColor: '#F58EA6',
     width: '100%',
     padding: {
       top: '1rem',
@@ -36,6 +34,9 @@ const useStyles = createUseStyles({
       right: '2rem',
       bottom: '1rem',
     },
+  },
+  title: {
+    fontSize: '1.5rem',
   },
   footer: {
     height: 50,
@@ -45,15 +46,15 @@ const useStyles = createUseStyles({
 
 const Layout = ({children}) => {
   const classes = useStyles();
+  console.log(classes);
   return (
     <div className={classes.root}>
-      <header className={classes.nav}>
-        <CustomLink id="home" to="/home" className={classes.home}>
-          {/* <img src={avatar} className={classes.avatar} alt="Avatar"></img> */}
+      <header className={classes.header}>
+        <CustomLink id="title" to="/home" className={classes.title}>
           UGUR AKIN
         </CustomLink>
         <FancyNav />
-        <div>Contact Links</div>
+        <ContactLinks />
       </header>
       {children}
     </div>
