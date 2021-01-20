@@ -3,6 +3,7 @@
 # Workspace
 .vscode/
 .eslintcache
+debug.log
 
 # dependencies
 /node_modules
