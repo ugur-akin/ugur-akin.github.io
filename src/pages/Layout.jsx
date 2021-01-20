@@ -47,14 +47,14 @@ const Layout = ({children}) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <nav className={classes.nav}>
+      <header className={classes.nav}>
         <CustomLink id="home" to="/home" className={classes.home}>
           {/* <img src={avatar} className={classes.avatar} alt="Avatar"></img> */}
           UGUR AKIN
         </CustomLink>
         <FancyNav />
         <div>Contact Links</div>
-      </nav>
+      </header>
       {children}
     </div>
   );

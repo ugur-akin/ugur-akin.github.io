@@ -1,4 +1,4 @@
-import {faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons';
+import {faCaretRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {createUseStyles} from 'react-jss';
@@ -22,28 +22,24 @@ const useStyles = createUseStyles({
     verticalAlign: 'middle',
   },
   link: {
-    fontSize: '90%',
+    fontSize: '1rem',
     border: {
       style: 'solid',
       thickness: 2,
       color: 'white',
     },
-    padding: '1rem',
+    padding: '0.5rem',
     borderRadius: '0.2rem',
-    // transition: 'transform 0.5s, background-color 0.5s',
-    transition: [
-      ['transform', '0.5s'],
-      ['backgroundColor', '0.5s'],
-    ],
+    fontWeight: '600',
+    transition: {
+      property: 'all',
+      duration: '0.5s',
+    },
     '&:hover': {
-      transform: 'scale(1.05, 1.05)',
+      transform: 'scale(1.1, 1.1)',
       backgroundColor: 'white',
       color: '#041D25',
-    },
-  },
-  rightArrow: {
-    margin: {
-      left: '1.5rem',
+      borderColor: '#041D25',
     },
   },
   name: {
@@ -66,12 +62,8 @@ const Home = () => {
         developer.
       </h1>
       <CustomLink to="/projects" className={classes.link}>
-        View my work{' '}
-        <FontAwesomeIcon
-          icon={faLongArrowAltRight}
-          className={classes.rightArrow}
-          size="2x"
-        />
+        View My Work{' '}
+        <FontAwesomeIcon icon={faCaretRight} size="2x" pull="right" />
       </CustomLink>
     </section>
   );
