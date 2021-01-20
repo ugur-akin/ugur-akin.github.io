@@ -1,10 +1,11 @@
 import React from 'react';
 import avatar from './avatar.jpg';
 import {createUseStyles} from 'react-jss';
+import {Link} from 'react-router-dom';
 
 const useStyles = createUseStyles({
   root: {
-    backgroundColor: '#282c34',
+    backgroundColor: '#041D25',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
@@ -12,6 +13,9 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     fontSize: 'calc(10px + 2vmin)',
     color: 'white',
+  },
+  home: {
+    color: '#FFD470',
   },
   nav: {
     position: 'absolute',
@@ -21,30 +25,28 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'stretch',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     color: 'white',
-    backgroundColor: 'brown',
+    backgroundColor: '#EF436B',
     width: '100%',
-    padding: '1rem',
+    padding: {
+      top: '1rem',
+      left: '2rem',
+      right: '2rem',
+      bottom: '1rem',
+    },
   },
-  avatar: {
-    height: 50,
-    width: 50,
-    borderRadius: '50%',
-    objectFit: 'cover',
-    verticalAlign: 'middle',
-  },
-  name: {
-    color: 'cornflowerblue',
-  },
-  react: {
-    color: 'rgb(97, 218, 251)',
-  },
-  header: {
+  navItems: {
+    flexGrow: 1,
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'start',
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    '& > *': {
+      margin: {
+        left: '0.5rem',
+        right: '0.5rem',
+      },
+    },
   },
   footer: {
     height: 50,
@@ -52,32 +54,23 @@ const useStyles = createUseStyles({
   },
 });
 
-const Layout = () => {
+const Layout = ({children}) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <nav className={classes.nav}>
-        <div>
+        <Link id="home" to="/home" className={classes.home}>
           {/* <img src={avatar} className={classes.avatar} alt="Avatar"></img> */}
           UGUR AKIN
-        </div>
-        <div>
-          <span>About</span>
-          <span>Projects</span>
-          <span>Blog</span>
+        </Link>
+        <div id="nav-items" className={classes.navItems}>
+          <div>About</div>
+          <div>Projects</div>
+          <div>Blog</div>
         </div>
         <div>Contact Links</div>
       </nav>
-      <section className={classes.header}>
-        <h2>
-          Hello, I'm <span className={classes.name}> Ugur Akin</span>.
-        </h2>
-        <h1>
-          I'm a full-stack <span className={classes.react}>ReactJS</span>{' '}
-          developer.
-        </h1>
-        <p>View my work</p>
-      </section>
+      {children}
     </div>
   );
 };
