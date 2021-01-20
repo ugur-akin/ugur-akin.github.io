@@ -2,7 +2,8 @@ import {faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {createUseStyles} from 'react-jss';
-import {Link} from 'react-router-dom/cjs/react-router-dom.min';
+import CustomLink from '../components/CustomLink';
+
 const useStyles = createUseStyles({
   header: {
     display: 'flex',
@@ -27,23 +28,22 @@ const useStyles = createUseStyles({
       thickness: 2,
       color: 'white',
     },
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: '1rem',
     borderRadius: '0.2rem',
-    // transform: 'scale(0.9)',
-    // transform: 'scale(1)',
-    transition: 'transform 0.5s, background-color 0.5s',
+    // transition: 'transform 0.5s, background-color 0.5s',
+    transition: [
+      ['transform', '0.5s'],
+      ['backgroundColor', '0.5s'],
+    ],
     '&:hover': {
-      transform: 'scale(1.1, 1.1)',
+      transform: 'scale(1.05, 1.05)',
       backgroundColor: 'white',
       color: '#041D25',
     },
   },
   rightArrow: {
     margin: {
-      left: '2rem',
+      left: '1.5rem',
     },
   },
   name: {
@@ -65,14 +65,14 @@ const Home = () => {
         I'm a full-stack <span className={classes.react}>ReactJS</span>{' '}
         developer.
       </h1>
-      <Link to="/projects" className={classes.link}>
+      <CustomLink to="/projects" className={classes.link}>
         View my work{' '}
         <FontAwesomeIcon
           icon={faLongArrowAltRight}
           className={classes.rightArrow}
           size="2x"
         />
-      </Link>
+      </CustomLink>
     </section>
   );
 };

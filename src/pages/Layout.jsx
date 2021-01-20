@@ -1,7 +1,8 @@
 import React from 'react';
-import avatar from './avatar.jpg';
+// import avatar from './avatar.jpg';
 import {createUseStyles} from 'react-jss';
-import {Link} from 'react-router-dom';
+import CustomLink from '../components/CustomLink';
+import FancyNav from '../components/FancyNav';
 
 const useStyles = createUseStyles({
   root: {
@@ -15,7 +16,7 @@ const useStyles = createUseStyles({
     color: 'white',
   },
   home: {
-    color: '#FFD470',
+    color: '#FFE7AD',
   },
   nav: {
     position: 'absolute',
@@ -36,18 +37,6 @@ const useStyles = createUseStyles({
       bottom: '1rem',
     },
   },
-  navItems: {
-    flexGrow: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    '& > *': {
-      margin: {
-        left: '0.5rem',
-        right: '0.5rem',
-      },
-    },
-  },
   footer: {
     height: 50,
     backgroundColor: 'coral',
@@ -59,15 +48,11 @@ const Layout = ({children}) => {
   return (
     <div className={classes.root}>
       <nav className={classes.nav}>
-        <Link id="home" to="/home" className={classes.home}>
+        <CustomLink id="home" to="/home" className={classes.home}>
           {/* <img src={avatar} className={classes.avatar} alt="Avatar"></img> */}
           UGUR AKIN
-        </Link>
-        <div id="nav-items" className={classes.navItems}>
-          <div>About</div>
-          <div>Projects</div>
-          <div>Blog</div>
-        </div>
+        </CustomLink>
+        <FancyNav />
         <div>Contact Links</div>
       </nav>
       {children}

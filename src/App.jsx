@@ -1,15 +1,15 @@
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Redirect,
   Route,
   Switch,
 } from 'react-router-dom/cjs/react-router-dom.min';
-import Layout from './Layout';
-import Home from './Home';
+import Layout from './pages/Layout';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Layout>
         <Switch>
           <Redirect path="/" exact to="/home" />
@@ -18,7 +18,7 @@ function App() {
           </Route>
         </Switch>
       </Layout>
-    </Router>
+    </BrowserRouter>
   );
 }
 
