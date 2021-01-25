@@ -8,6 +8,8 @@ import {
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
+import Projects from './pages/Projects';
+import Blog from './pages/Blog';
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/blog">
+            <Blog />
           </Route>
         </Switch>
       </Layout>

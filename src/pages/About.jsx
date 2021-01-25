@@ -3,26 +3,29 @@ import {createUseStyles} from 'react-jss';
 import avatarImg from '../avatar.jpg';
 const useStyles = createUseStyles({
   root: {
-    alignSelf: 'flex-start',
+    flexBasis: '100%',
+
     display: 'flex',
     alignItems: 'stretch',
     justifyContent: 'space-evenly',
     height: '100%',
+    boxSizing: 'border-box',
     paddingTop: '5%',
   },
   appendix: {
     flex: 1,
     boxSizing: 'border-box',
     textAlign: 'center',
-    position: 'sticky',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   article: {
     flex: 2,
     boxSizing: 'border-box',
     paddingRight: '10%',
+    paddingLeft: '2rem',
     // Scrollable but hidden scrollbars:
     overflowX: 'hidden',
     overflowY: 'scroll',
@@ -73,64 +76,66 @@ const About = () => {
       </aside>
       <article className={classes.article}>
         <header>
-          {/* <img src="" /> */}
-          <h4>About Me</h4>
+          <h2>About Me</h2>
+          <p>
+            I’m a passionate Software Engineer with a good grasp of web
+            technologies on top of a strong education in CS and a long history
+            of programming. I’m keen on building dynamic and user-friendly
+            solutions in the form of Web Apps, PWAs and Native Apps; and
+            designing performant, scalable and easy-to-use APIs to support my
+            solutions.
+          </p>
         </header>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-          augue sit amet dui posuere hendrerit. Suspendisse sit amet auctor
-          metus, sit amet ultricies ipsum. Fusce lectus ligula, accumsan vel
-          bibendum id, fringilla at est. Nunc congue, turpis vitae blandit
-          tempus, augue libero ultrices metus, at blandit felis lorem vel
-          turpis. Quisque pulvinar risus eget placerat congue. Nulla et ex dui.
-          Duis non ultrices neque, at vehicula metus. Maecenas neque elit,
-          viverra sit amet magna quis, pretium tristique ipsum. Nullam pretium
-          tempor quam, eu faucibus ex tincidunt quis.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-          augue sit amet dui posuere hendrerit. Suspendisse sit amet auctor
-          metus, sit amet ultricies ipsum. Fusce lectus ligula, accumsan vel
-          bibendum id, fringilla at est. Nunc congue, turpis vitae blandit
-          tempus, augue libero ultrices metus, at blandit felis lorem vel
-          turpis. Quisque pulvinar risus eget placerat congue. Nulla et ex dui.
-          Duis non ultrices neque, at vehicula metus. Maecenas neque elit,
-          viverra sit amet magna quis, pretium tristique ipsum. Nullam pretium
-          tempor quam, eu faucibus ex tincidunt quis.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-          augue sit amet dui posuere hendrerit. Suspendisse sit amet auctor
-          metus, sit amet ultricies ipsum. Fusce lectus ligula, accumsan vel
-          bibendum id, fringilla at est. Nunc congue, turpis vitae blandit
-          tempus, augue libero ultrices metus, at blandit felis lorem vel
-          turpis. Quisque pulvinar risus eget placerat congue. Nulla et ex dui.
-          Duis non ultrices neque, at vehicula metus. Maecenas neque elit,
-          viverra sit amet magna quis, pretium tristique ipsum. Nullam pretium
-          tempor quam, eu faucibus ex tincidunt quis.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-          augue sit amet dui posuere hendrerit. Suspendisse sit amet auctor
-          metus, sit amet ultricies ipsum. Fusce lectus ligula, accumsan vel
-          bibendum id, fringilla at est. Nunc congue, turpis vitae blandit
-          tempus, augue libero ultrices metus, at blandit felis lorem vel
-          turpis. Quisque pulvinar risus eget placerat congue. Nulla et ex dui.
-          Duis non ultrices neque, at vehicula metus. Maecenas neque elit,
-          viverra sit amet magna quis, pretium tristique ipsum. Nullam pretium
-          tempor quam, eu faucibus ex tincidunt quis.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut
-          augue sit amet dui posuere hendrerit. Suspendisse sit amet auctor
-          metus, sit amet ultricies ipsum. Fusce lectus ligula, accumsan vel
-          bibendum id, fringilla at est. Nunc congue, turpis vitae blandit
-          tempus, augue libero ultrices metus, at blandit felis lorem vel
-          turpis. Quisque pulvinar risus eget placerat congue. Nulla et ex dui.
-          Duis non ultrices neque, at vehicula metus. Maecenas neque elit,
-          viverra sit amet magna quis, pretium tristique ipsum. Nullam pretium
-          tempor quam, eu faucibus ex tincidunt quis.
-        </p>
+        <section>
+          <h3>Technical Skills</h3>
+          <p>
+            <b>Programming Languages: </b> JavaScript (ES6/TS), C++, Python,
+            Java.
+            <br />
+            <b>Frontend Tech: </b>HTML/CSS, React.js w/Hooks and Context, Redux,
+            Material-UI, Jest, Bootstrap. <br />
+            <b>Backend Tech:</b> Node.js, Express, Mongoose, MongoDB, SQL.{' '}
+            <br />
+            <b>Data Science </b>&amp; Analysis: Numpy, Pandas, Spark,
+            Scikit-Learn, Jupyter, MATLAB.
+            <br />
+            <b>General:</b> Git, VS/VS Code, Chrome Dev Tools, ESLint/Prettier,
+            Webpack, CMake, WSL, Linux Ubuntu.
+            <br />
+          </p>
+        </section>
+        <section>
+          <h3>Education</h3>
+          <p>
+            <b>Simon Fraser University</b>, B. Sc.
+            <span style={{float: 'right', fontSize: '80%'}}>
+              Aug 2014 - Feb 2020
+            </span>{' '}
+          </p>
+          <p
+            style={{
+              marginTop: 0,
+              boxSizing: 'border-box',
+              paddingLeft: '2rem',
+              fontSize: '80%',
+            }}
+          >
+            <b>Major:</b> Computing Science <br />
+            <b>Minor:</b> Mathematics
+          </p>
+        </section>
+        <section>
+          <h4>Programming History</h4>
+        </section>
+        <section>
+          <h4>Philosophies</h4>
+        </section>
+        <section>
+          <h4>Fields of Interest</h4>
+        </section>
+        <section>
+          <h4>Hobbies</h4>
+        </section>
       </article>
     </section>
   );
