@@ -57,7 +57,6 @@ const CustomLink = React.forwardRef(
     const navLinkProps = navLink && {
       activeClassName: clsx(classes.active, activeClassName),
     };
-    console.log(className);
     return (
       <LinkComponent
         ref={ref}

@@ -8,18 +8,14 @@ import FancyNav from '../components/FancyNav';
 const useStyles = createUseStyles({
   root: {
     backgroundColor: '#041D25',
-    minHeight: '100vh',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'stretch',
     fontSize: 'calc(10px + 2vmin)',
     color: 'white',
   },
   header: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'row',
@@ -27,7 +23,6 @@ const useStyles = createUseStyles({
     justifyContent: 'space-between',
     color: 'white',
     backgroundColor: '#F58EA6',
-    width: '100%',
     padding: {
       top: '1rem',
       left: '2rem',
@@ -42,11 +37,18 @@ const useStyles = createUseStyles({
     height: 50,
     backgroundColor: 'coral',
   },
+  contentContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxSizing: 'border-box',
+    flexBasis: '100%',
+    overflow: 'hidden',
+  },
 });
 
 const Layout = ({children}) => {
   const classes = useStyles();
-  console.log(classes);
   return (
     <div className={classes.root}>
       <header className={classes.header}>
@@ -56,7 +58,7 @@ const Layout = ({children}) => {
         <FancyNav />
         <ContactLinks />
       </header>
-      {children}
+      <div className={classes.contentContainer}>{children}</div>
     </div>
   );
 };

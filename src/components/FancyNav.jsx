@@ -17,7 +17,7 @@ const FancyNav = () => {
 
   return (
     <nav id="nav-items" className={classes.navItems}>
-      <span id="active_bar"></span>
+      <span id="active-bar" />
       <CustomLink to="/home" navLink>
         Home
       </CustomLink>

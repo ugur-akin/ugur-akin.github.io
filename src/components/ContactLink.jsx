@@ -11,11 +11,11 @@ const useStyles = createUseStyles({
   },
 });
 
-const ContactLink = ({icon, src, color, ...other}) => {
-  const classes = useStyles({color});
+const ContactLink = ({icon, src, ...other}) => {
+  const classes = useStyles();
   return (
     <a href={src} className={classes.root}>
-      <FontAwesomeIcon icon={icon} color={color} />
+      <FontAwesomeIcon icon={icon} color="white" />
     </a>
   );
 };
